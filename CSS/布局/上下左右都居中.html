@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    /**
+    利用writing-mode 通过设置文档流方向，先 vertical-lr 后恢复 horizontal-tb
+    结合 text-align 或者 margin: auto 属性实现
+    https://www.zhangxinxu.com/wordpress/2016/04/css-writing-mode/
+    https://blog.csdn.net/dkmings/article/details/51661056
+    **/
+    
+    .center-box{
+      writing-mode: tb-lr;
+      writing-mode: vertical-lr;
+      text-align: center;
+    }
+    .center-wrap{
+        writing-mode: lr-tb;
+        writing-mode: horizontal-tb;
+        text-align: center;
+        width: 100%;
+        display: inline-block;
+    }
+    .center-content{
+        display: inline-block;
+        text-align: left;
+        text-align: initial;
+    }
+
+  </style>
+  <body>
+    <p><strong>垂直流-水平margin重叠</strong></p>
+    <div class="center-box">
+      <div class="center-wrap">
+          <div class="center-content">
+              你想要上下左右居中的内容(元素,文本或其任意组合)
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
